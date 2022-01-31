@@ -279,7 +279,7 @@ class CommandMapGenerator implements Consumer<TypeElement> {
                 "} else { "
                 + NEW_LINE
                 + INDENT + INDENT + INDENT + INDENT + INDENT
-                + "java.lang.System.out.println(\" " + CommandsMap.class.getSimpleName() + " cleared for "
+                + "java.lang.System.out.println(\" " + CommandsMap.class.getSimpleName() + " is cleared for "
                 + className + "." + methodName + "() \"); "
                 + NEW_LINE
                 + INDENT + INDENT + INDENT + INDENT

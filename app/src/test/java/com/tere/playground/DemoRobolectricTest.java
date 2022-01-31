@@ -11,10 +11,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest {
+public class DemoRobolectricTest {
 
   @Test
-  public void androidEspressoTest() {
+  public void updateData() {
     try (ActivityScenario<TestActivity> scenario = ActivityScenario.launch(TestActivity.class)) {
       scenario.onActivity(activity -> {
         Truth.assertThat(((TextView) activity.findViewById(R.id.tv_text)).getText().toString())

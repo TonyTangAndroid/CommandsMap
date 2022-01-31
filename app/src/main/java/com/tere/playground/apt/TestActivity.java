@@ -4,11 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
 import com.annotations.Command;
 import com.annotations.CommandsMapFactory;
 import com.mapper.CommandsMap;
 import com.tere.playground.R;
-import io.reactivex.annotations.Nullable;
 
 /**
  * a test activity for annotation processing and Commands Map operations
@@ -39,30 +40,28 @@ public class TestActivity extends Activity {
         setContentView(R.layout.activity_main);
         tv_text = findViewById(R.id.tv_text);
         commandsMap.execute("0");
-        commandsMap.execute(1L, "test >>> 1");
-        commandsMap.execute(2, "test >>> 2", "<<<<<");
+        commandsMap.execute(1L, "s1");
+        commandsMap.execute(2, "s11", "s22");
     }
 
     @Command(keyString = "0")
     void printZero() {
         Log.d(TAG, "printZero()");
-        tv_text.append("printed Zero");
-        tv_text.append("\n");
+        tv_text.append("0");
     }
 
     @Command(keyLong = 1L)
     void printOne(String s) {
         Log.e(TAG, s);
-        tv_text.append(String.format("printed One:%s",s));
-        tv_text.append("\n");
+        tv_text.append(s);
 
     }
 
     @Command(2)
     void printTwo(String s1, String s2) {
-        Log.e(TAG, s1 + s2);
-        tv_text.append(String.format("printed Two:%s + %s",s1, s2));
-        tv_text.append("\n");
+        String msg = s1 + s2;
+        Log.e(TAG, msg);
+        tv_text.append(msg);
     }
 
 
@@ -70,5 +69,10 @@ public class TestActivity extends Activity {
     protected void onDestroy() {
         commandsMap.clear();
         super.onDestroy();
+    }
+
+    @VisibleForTesting
+    public String collectedText() {
+        return tv_text.getText().toString();
     }
 }

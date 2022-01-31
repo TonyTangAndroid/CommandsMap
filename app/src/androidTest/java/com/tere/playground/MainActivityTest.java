@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 public class MainActivityTest {
 
   @Test
-  public void updateData() {
+  public void androidEspressoTest() {
     try (ActivityScenario<TestActivity> scenario = ActivityScenario.launch(TestActivity.class)) {
       scenario.onActivity(activity -> {
         Truth.assertThat(((TextView) activity.findViewById(R.id.tv_text)).getText().toString())

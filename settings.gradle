@@ -1,1 +1,4 @@
-include ':app', ':CommandMapsCompiler', ':CommandMaps'
+include ':compiler_model'
+include ':CommandMaps'
+include ':CommandMapsCompiler'
+include ':app'

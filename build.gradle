@@ -28,5 +28,5 @@ task clean(type: Delete) {
 
 
 ext {
-    group = 'com.github.TonyTangAndroid'
+    group = 'com.github.Ahmed-Adel-Ismail'
 }

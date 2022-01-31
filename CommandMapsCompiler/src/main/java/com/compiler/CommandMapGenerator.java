@@ -280,7 +280,7 @@ class CommandMapGenerator implements Consumer<TypeElement> {
                 + NEW_LINE
                 + INDENT + INDENT + INDENT + INDENT + INDENT
                 + "java.lang.System.out.println(\" " + CommandsMap.class.getSimpleName() + " is cleared for "
-                + classModelName(className) + "." + methodName + "() \"); "
+                + classModelName(className) + "." + methodNameFromEntity(methodName.toString()) + "() \"); "
                 + NEW_LINE
                 + INDENT + INDENT + INDENT + INDENT
                 + "}"
@@ -289,6 +289,11 @@ class CommandMapGenerator implements Consumer<TypeElement> {
 
     private String classModelName(String className) {
         return new ClassNameEntity(className).getName();
+    }
+
+
+    private String methodNameFromEntity(String methodNam) {
+        return String.format("[[%s]]",new MethodEntity(methodNam).getMethodName());
     }
 
 

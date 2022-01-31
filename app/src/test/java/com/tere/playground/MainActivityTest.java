@@ -12,7 +12,7 @@ public class MainActivityTest {
   @Test
   public void testIt() {
 
-    Truth.assertThat(1+1).isEqualTo("2");
+    Truth.assertThat(1+1).isEqualTo(2);
 
   }
 }

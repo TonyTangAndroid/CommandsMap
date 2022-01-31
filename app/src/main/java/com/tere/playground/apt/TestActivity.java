@@ -1,15 +1,14 @@
 package com.tere.playground.apt;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
 import android.widget.TextView;
 import com.annotations.Command;
 import com.annotations.CommandsMapFactory;
 import com.mapper.CommandsMap;
 import com.tere.playground.R;
+import io.reactivex.annotations.Nullable;
 
 /**
  * a test activity for annotation processing and Commands Map operations
@@ -17,7 +16,7 @@ import com.tere.playground.R;
  * Created by Ahmed Adel Ismail on 9/9/2017.
  */
 @CommandsMapFactory
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends Activity {
 
     private static final String TAG = TestActivity.class.getSimpleName();
     private CommandsMap commandsMap;

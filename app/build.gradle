@@ -1,16 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.tere.playground"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 31
         versionCode 1
         multiDexEnabled true
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -31,14 +30,13 @@ dependencies {
 
     implementation project(':CommandMaps')
     annotationProcessor project(':CommandMapsCompiler')
-//
-//    implementation 'com.github.Ahmed-Adel-Ismail.CommandsMap:CommandMaps:1.0.0'
-//    annotationProcessor 'com.github.Ahmed-Adel-Ismail.CommandsMap:CommandMapsCompiler:1.0.0'
+
+//    implementation 'com.github.TonyTangAndroid.CommandsMap:CommandMaps:1.0.2'
+//    annotationProcessor 'com.github.TonyTangAndroid.CommandsMap:CommandMapsCompiler:1.0.2'
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'com.google.truth:truth:1.1.3'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation ('androidx.test.espresso:espresso-core:3.4.0')
 
 }

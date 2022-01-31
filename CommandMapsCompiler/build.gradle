@@ -6,11 +6,11 @@ group = rootProject.ext.group
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 dependencies {
-    implementation project(':CommandMaps')
-    implementation 'com.google.auto.service:auto-service-annotations:1.0.1'
+    compile project(':CommandMaps')
+    compile 'com.google.auto.service:auto-service-annotations:1.0.1'
     annotationProcessor 'com.google.auto.service:auto-service:1.0.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
-    implementation 'com.squareup:javawriter:2.5.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.2.21'
+    compile 'com.squareup:javawriter:2.5.0'
 }
 
 
